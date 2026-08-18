@@ -151,21 +151,7 @@ namespace WildfrostAccessibility
             // For a card on the board, slot its position in right after the name
             // in the short "Row R S" form (e.g. "Row 1 3") so the player can map
             // the battlefield by ear before the stats.
-            string slot = GetEntitySlotShort(entity);
-            if (string.IsNullOrEmpty(slot))
-                return desc;
-
-            if (string.IsNullOrEmpty(desc))
-            {
-                desc = slot;
-            }
-            else
-            {
-                int afterName = desc.IndexOf(", ");
-                desc = afterName < 0
-                    ? desc + ", " + slot
-                    : desc.Substring(0, afterName) + ", " + slot + desc.Substring(afterName);
-            }
+            desc = InsertAfterName(desc, GetEntitySlotShort(entity));
 
             // Trailing, so the card itself still reads first
             string opposite = DescribeOpposite(entity.GetComponentInParent<CardSlot>());

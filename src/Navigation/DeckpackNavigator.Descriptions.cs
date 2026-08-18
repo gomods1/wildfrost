@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace WildfrostAccessibility
 {
     /// <summary>
@@ -42,37 +40,54 @@ namespace WildfrostAccessibility
             return null;
         }
 
-        /// <summary>"Snow Fox, 1 of 3 charm slots used, Charm: ..." — what matters when placing.</summary>
+        /// <summary>
+        /// "Snow Fox, 1 of 3 charm slots used, Companion, attack 4, 8 of 8
+        /// health, acts in 3, Frenzy 2, Bombth Charm" — the card's ordinary
+        /// focus read with the free-slot count spliced in after the name.
+        /// Choosing where a charm goes is a comparison between cards, so it
+        /// needs the same stats every other card read gives: this used to stop
+        /// at the name, the slot count and the charms already attached, which
+        /// left the counter — often the whole reason a charm goes on one card
+        /// rather than another — unsaid.
+        /// </summary>
         private static string DescribeAssignTarget(Entity entity)
         {
-            var parts = new List<string> { entity.data.title };
+            string desc = ItemDescriber.DescribeEntityFocus(entity);
+            if (string.IsNullOrEmpty(desc))
+                desc = entity.data.title;
 
-            // Slot usage — only meaningful for charms (crowns have their own slot)
+            return ItemDescriber.InsertAfterName(desc, DescribeSlotUsage(entity));
+        }
+
+        /// <summary>
+        /// "1 of 3 charm slots used" for the focused card, or null when the held
+        /// upgrade isn't a charm (crowns and tokens have their own slot) or the
+        /// card's slot data can't be read.
+        /// </summary>
+        private static string DescribeSlotUsage(Entity entity)
+        {
             var dragData = _dragDisplay != null ? _dragDisplay.data : null;
-            if (dragData == null || dragData.type == CardUpgradeData.Type.Charm)
+            if (dragData != null && dragData.type != CardUpgradeData.Type.Charm)
+                return null;
+
+            try
             {
-                try
+                int total = entity.data.charmSlots;
+                try { total += entity.data.customData?.Get("extraCharmSlots", 0) ?? 0; }
+                catch { /* cards without custom data */ }
+                int used = 0;
+                foreach (var upgrade in entity.data.upgrades)
                 {
-                    int total = entity.data.charmSlots;
-                    try { total += entity.data.customData?.Get("extraCharmSlots", 0) ?? 0; }
-                    catch { /* cards without custom data */ }
-                    int used = 0;
-                    foreach (var upgrade in entity.data.upgrades)
-                    {
-                        if (upgrade != null && upgrade.type == CardUpgradeData.Type.Charm
-                            && upgrade.takeSlot)
-                            used++;
-                    }
-                    parts.Add(Loc.Get("deckpack_target_slots", used, total));
+                    if (upgrade != null && upgrade.type == CardUpgradeData.Type.Charm
+                        && upgrade.takeSlot)
+                        used++;
                 }
-                catch { /* slots stay unspoken if the data is unreadable */ }
+                return Loc.Get("deckpack_target_slots", used, total);
             }
-
-            string upgrades = ItemDescriber.DescribeUpgrades(entity.data);
-            if (!string.IsNullOrEmpty(upgrades))
-                parts.Add(upgrades);
-
-            return string.Join(", ", parts);
+            catch
+            {
+                return null; // slots stay unspoken if the data is unreadable
+            }
         }
 
     }

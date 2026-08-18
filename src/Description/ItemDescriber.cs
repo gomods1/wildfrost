@@ -188,16 +188,27 @@ namespace WildfrostAccessibility
         /// </summary>
         private static string WithCompanionRow(Entity entity, string desc)
         {
-            string row = CompanionLimitNarrator.DescribeRow(entity);
-            if (string.IsNullOrEmpty(row))
+            return InsertAfterName(desc, CompanionLimitNarrator.DescribeRow(entity));
+        }
+
+        /// <summary>
+        /// Splice a fact in right behind the card's name, ahead of the stats —
+        /// the spot reserved for whatever the current screen is actually asking
+        /// about (a battlefield slot, the companion-limit row, free charm slots
+        /// while placing a charm). The name still leads, and the screen's own
+        /// question is answered before the reader has to sit through the stats.
+        /// </summary>
+        public static string InsertAfterName(string desc, string insert)
+        {
+            if (string.IsNullOrEmpty(insert))
                 return desc;
             if (string.IsNullOrEmpty(desc))
-                return row;
+                return insert;
 
             int afterName = desc.IndexOf(", ");
             return afterName < 0
-                ? desc + ", " + row
-                : desc.Substring(0, afterName) + ", " + row + desc.Substring(afterName);
+                ? desc + ", " + insert
+                : desc.Substring(0, afterName) + ", " + insert + desc.Substring(afterName);
         }
 
         /// <summary>Look for a component on the item, its click handler, parents, or children.</summary>
