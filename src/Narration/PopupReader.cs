@@ -179,7 +179,9 @@ namespace WildfrostAccessibility
             if (!_inspectHintSpoken
                 && (phase == "PhaseInspectEnemy"
                     || (text.IndexOf("the I key", System.StringComparison.OrdinalIgnoreCase) >= 0
-                        && text.IndexOf("inspect", System.StringComparison.OrdinalIgnoreCase) >= 0)))
+                        && text.IndexOf("inspect", System.StringComparison.OrdinalIgnoreCase) >= 0)
+                    || (text.IndexOf("la tecla I", System.StringComparison.OrdinalIgnoreCase) >= 0
+                        && text.IndexOf("inspecci", System.StringComparison.OrdinalIgnoreCase) >= 0)))
             {
                 _inspectHintSpoken = true;
                 return " " + Loc.Get("tutorial_inspect_hint");

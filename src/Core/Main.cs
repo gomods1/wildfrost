@@ -139,6 +139,7 @@ namespace WildfrostAccessibility
             DebugLogger.Initialize(this);
             Loc.Initialize();
             Loc.LoadLanguageOverride(ModDirectory);
+            GameTranslations.Initialize(ModDirectory);
             ScreenManager.Initialize();
             VisualNarrator.Initialize();
             SettingsMenu.LoadSettings();
@@ -158,6 +159,7 @@ namespace WildfrostAccessibility
             CharmGainNarrator.Reset();
             HelpPanelRouter.Reset();
             ScreenManager.Shutdown();
+            GameTranslations.Shutdown();
             DestroyUpdateHook();
             ScreenReader.Shutdown();
 
@@ -208,7 +210,7 @@ namespace WildfrostAccessibility
             if (Input.GetKeyDown(KeyCode.F10))
             {
                 SettingsMenu.SetDebug(!debugMode);
-                ScreenReader.Say(debugMode ? "Debug mode on" : "Debug mode off", interrupt: true);
+                ScreenReader.Say(Loc.Get("settings_debug") + ": " + Loc.Get(debugMode ? "settings_on" : "settings_off"), interrupt: true);
             }
 
             if (Input.GetKeyDown(KeyCode.F1))

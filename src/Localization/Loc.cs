@@ -11,11 +11,11 @@ namespace WildfrostAccessibility
     /// <summary>
     /// The lookup engine for screen reader strings: the language-keyed string
     /// table, the reads against it (Get, TryGet) and the writes into it (Add,
-    /// AddForAll). Also owns which language the mod speaks — the explicit
-    /// choice made in the settings menu (F2), which is persisted to
-    /// language.txt and lets the mod speak a language the game itself does not
-    /// offer, and the automatic fallback chain used when no choice has been
-    /// made. The string data lives in the Loc.Strings.* parts.
+    /// AddForAll). Also owns which language the mod speaks — by default the
+    /// language chosen in the game's own settings, or an explicit override made
+    /// in the mod's settings menu (F2), persisted to language.txt, which lets
+    /// the mod speak a language the game itself does not offer. The string
+    /// data lives in the Loc.Strings.* parts.
     /// </summary>
     public static partial class Loc
     {
@@ -250,25 +250,50 @@ namespace WildfrostAccessibility
 
         /// <summary>
         /// Returns the locale code the mod speaks: the explicit choice if one
-        /// was made, otherwise the automatic chain — the operating system's
-        /// language (the mod talks through the system screen reader, so that is
-        /// the language the player already listens in), then the game's own
-        /// language setting, then English.
+        /// was made in the settings menu, otherwise the automatic chain, which
+        /// follows the language the player chose in the game's own settings.
+        /// The one exception is a game left in English only because it has no
+        /// text in the player's language (German, French, ...): the mod still
+        /// speaks the operating system's language there, since the mod talks
+        /// through the system screen reader and that is the language the player
+        /// already listens in.
         /// </summary>
         public static string GetCurrentLanguageCode()
         {
             if (_overrideLang != null)
                 return _overrideLang;
 
-            string system = SystemLanguageCode();
-            if (system != null)
-                return system;
-
             string game = GameLanguageCode();
-            if (game != null)
+            if (game != null && game != "en")
                 return game;
 
-            return "en";
+            string system = SystemLanguageCode();
+            if (system != null && system != "en" && !GameHasLanguage(system))
+                return system;
+
+            return game ?? system ?? "en";
+        }
+
+        /// <summary>
+        /// Whether the game itself offers this language (its own locales plus
+        /// the ones this mod adds, see GameTranslations). When it does, a game
+        /// still in English is the player's choice, not a gap to fill.
+        /// </summary>
+        private static bool GameHasLanguage(string langCode)
+        {
+            try
+            {
+                foreach (Locale locale in LocalizationSettings.AvailableLocales.Locales)
+                {
+                    if (NormalizeLanguage(locale.Identifier.Code) == langCode)
+                        return true;
+                }
+            }
+            catch
+            {
+                // Localization system not ready yet
+            }
+            return false;
         }
 
         // Get() runs several times per announcement, so the automatic chain is

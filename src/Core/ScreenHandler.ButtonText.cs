@@ -180,18 +180,18 @@ namespace WildfrostAccessibility
         {
             // HelpPanelShower = help/info button
             if (obj.GetComponent<HelpPanelShower>() != null)
-                return "Help";
+                return Loc.ButtonLabel("Help");
             if (obj.GetComponentInParent<HelpPanelShower>() != null)
-                return "Help";
+                return Loc.ButtonLabel("Help");
 
             // OpenURL = external link
             var openUrl = obj.GetComponent<OpenURL>();
             if (openUrl != null)
-                return IdentifyUrl(openUrl) ?? "Link";
+                return IdentifyUrl(openUrl) ?? Loc.ButtonLabel("Link");
 
             // Check for known game components
             if (obj.GetComponent<BattleLogButton>() != null)
-                return "Battle Log";
+                return Loc.ButtonLabel("Battle Log");
 
             return null;
         }
@@ -218,7 +218,7 @@ namespace WildfrostAccessibility
                         if (lower.Contains("youtube")) return "YouTube";
                         if (lower.Contains("reddit")) return "Reddit";
                         if (lower.Contains("wiki")) return "Wiki";
-                        return "Link";
+                        return Loc.ButtonLabel("Link");
                     }
                 }
             }
@@ -278,7 +278,7 @@ namespace WildfrostAccessibility
             foreach (var kv in _knownNames)
             {
                 if (lower.Contains(kv.Key))
-                    return kv.Value;
+                    return Loc.ButtonLabel(kv.Value);
             }
             return null;
         }

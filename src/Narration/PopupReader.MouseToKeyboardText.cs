@@ -18,6 +18,9 @@ namespace WildfrostAccessibility
         /// </summary>
         private static string MakeDragAccessible(string text)
         {
+            if (GameTextIsSpanish())
+                return MakeDragAccessibleSpanish(text);
+
             // "Right Click" inspects a card with a mouse; the mod binds I for
             // keyboard users. Collapse a leading "press" first so the rule
             // below can't produce "press press the I key".

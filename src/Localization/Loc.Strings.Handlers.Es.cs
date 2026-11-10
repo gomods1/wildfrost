@@ -115,7 +115,7 @@ namespace WildfrostAccessibility
             Add("es", "map_fork_gives_up", "elegir esto renuncia a: {0}");
             Add("es", "map_fork_gives_up_more", "elegir esto renuncia a: {0}, y {1} mas");
             Add("es", "map_fork_gives_up_unseen", "elegir esto renuncia a {0} lugares mas adelante en la otra rama");
-            Add("es", "help_map", "Mapa del viaje. Tu viaje es un camino de lugares. Flechas izquierda y derecha cambian de lugar. Enter viaja a un lugar disponible. Arriba y abajo alcanzan los mazos y otros controles. M lee todo el mapa, I lee detalles del lugar seleccionado incluidos enemigos, G lee tu oro. P abre tu inventario con el mazo y los amuletos.");
+            Add("es", "help_map", "Mapa del viaje. Tu viaje es un camino de lugares. Flechas izquierda y derecha cambian de lugar. Enter viaja a un lugar disponible. Arriba y abajo alcanzan los mazos y otros controles. M lee todo el mapa, I lee detalles del lugar seleccionado incluidos enemigos, G lee tu oro. P abre tu inventario con el mazo y los talismanes.");
 
             // Inventario (deckpack): mazo, reserva, amuletos, coronas
             Add("es", "deckpack_unavailable", "No hay inventario en esta pantalla.");
@@ -124,31 +124,31 @@ namespace WildfrostAccessibility
             Add("es", "deckpack_closed", "Inventario cerrado.");
             Add("es", "deckpack_part_deck", "{0} en el mazo");
             Add("es", "deckpack_part_reserve", "{0} en la reserva");
-            Add("es", "deckpack_part_charms", "{0} amuletos");
-            Add("es", "deckpack_part_charm_one", "1 amuleto");
+            Add("es", "deckpack_part_charms", "{0} talismanes");
+            Add("es", "deckpack_part_charm_one", "1 talisman");
             Add("es", "deckpack_part_crowns", "{0} coronas");
             Add("es", "deckpack_part_crown_one", "1 corona");
-            Add("es", "deckpack_hint", "Arriba y abajo cambian de grupo, izquierda y derecha se mueven dentro. Enter en un amuleto lo coge, Enter en una carta abre sus opciones. P o Escape cierra. F1 para la ayuda completa.");
+            Add("es", "deckpack_hint", "Arriba y abajo cambian de grupo, izquierda y derecha se mueven dentro. Enter en un talisman lo coge, Enter en una carta abre sus opciones. P o Escape cierra. F1 para la ayuda completa.");
             Add("es", "deckpack_group_deck", "Mazo, {0} cartas");
             Add("es", "deckpack_group_deck_one", "Mazo, 1 carta");
             Add("es", "deckpack_group_reserve", "Reserva, {0} cartas");
             Add("es", "deckpack_group_reserve_one", "Reserva, 1 carta");
-            Add("es", "deckpack_group_charms", "Amuletos, {0}");
+            Add("es", "deckpack_group_charms", "Talismanes, {0}");
             Add("es", "deckpack_group_crowns", "Coronas, {0}");
             Add("es", "deckpack_group_controls", "Botones");
             Add("es", "deckpack_pickup", "{0} cogido. {1} cartas pueden llevarlo. Las flechas cambian entre ellas, Enter lo fija de forma permanente, Escape lo devuelve.");
             Add("es", "deckpack_pickup_one", "{0} cogido. Una carta puede llevarlo. Enter lo fija de forma permanente, Escape lo devuelve.");
             Add("es", "deckpack_pickup_none", "{0}: ninguna carta puede llevarlo ahora. Devuelto.");
-            Add("es", "deckpack_battle_blocked", "Los amuletos no se pueden fijar durante la batalla.");
+            Add("es", "deckpack_battle_blocked", "Los talismanes no se pueden fijar durante la batalla.");
             Add("es", "deckpack_returned", "{0} devuelto.");
             Add("es", "deckpack_applying", "Fijando {0} a {1}.");
             Add("es", "deckpack_applied", "{0} fijado.");
             Add("es", "deckpack_not_eligible", "Esta carta no puede llevar {0}.");
-            Add("es", "deckpack_target_slots", "{0} de {1} huecos de amuleto usados");
-            Add("es", "charm_gained", "Amuleto conseguido! {0}");
+            Add("es", "deckpack_target_slots", "{0} de {1} huecos de talisman usados");
+            Add("es", "charm_gained", "Talisman conseguido! {0}");
             Add("es", "charm_gained_hint", "Enter lo fija ahora a una carta, Escape lo guarda en tu inventario para mas tarde.");
             Add("es", "charm_reserved", "{0} guardado en tu inventario. Fijalo cuando quieras pulsando P.");
-            Add("es", "charm_assign_button", "{0} Enter fija este amuleto ahora a una carta, Escape lo guarda en tu inventario para mas tarde.");
+            Add("es", "charm_assign_button", "{0} Enter fija este talisman ahora a una carta, Escape lo guarda en tu inventario para mas tarde.");
             Add("es", "deckpack_menu_open", "Opciones de {0}: {1}. Izquierda y derecha eligen, Enter activa, Escape cierra.");
             Add("es", "deckpack_menu_closed", "Opciones cerradas.");
             Add("es", "deckpack_option_rename", "Renombrar");
@@ -159,13 +159,13 @@ namespace WildfrostAccessibility
             Add("es", "deckpack_moved_deck", "{0} movida al mazo.");
             Add("es", "deckpack_crown_taken", "Corona quitada de {0} y devuelta al inventario.");
             Add("es", "deckpack_card_blocked", "Las opciones de carta no estan disponibles ahora.");
-            Add("es", "help_deckpack", "Inventario. Tu mazo, cartas de reserva y los amuletos y coronas conseguidos. Arriba y abajo cambian de grupo: mazo, reserva, amuletos, coronas y botones. Izquierda y derecha se mueven dentro del grupo. Enter en un amuleto o corona lo coge: las flechas cambian entre las cartas que pueden llevarlo, Enter lo fija de forma permanente, Escape lo devuelve. Enter en una carta abre sus opciones, como moverla entre mazo y reserva. I inspecciona la carta enfocada. P o Escape cierra el inventario.");
+            Add("es", "help_deckpack", "Inventario. Tu mazo, cartas de reserva y los talismanes y coronas conseguidos. Arriba y abajo cambian de grupo: mazo, reserva, talismanes, coronas y botones. Izquierda y derecha se mueven dentro del grupo. Enter en un talisman o corona lo coge: las flechas cambian entre las cartas que pueden llevarlo, Enter lo fija de forma permanente, Escape lo devuelve. Enter en una carta abre sus opciones, como moverla entre mazo y reserva. I inspecciona la carta enfocada. P o Escape cierra el inventario.");
             // Map node categories
             Add("es", "node_type_boss", "batalla de jefe");
             Add("es", "node_type_battle", "batalla");
             Add("es", "node_type_shop", "tienda");
             Add("es", "node_type_gnomeshop", "tienda de gnomos");
-            Add("es", "node_type_charm", "evento de amuleto");
+            Add("es", "node_type_charm", "evento de talisman");
             Add("es", "node_type_gold", "tesoro");
             Add("es", "node_type_item", "evento de objeto");
             Add("es", "node_type_companion", "evento de companero");
@@ -173,7 +173,7 @@ namespace WildfrostAccessibility
             Add("es", "node_type_curseitems", "evento de maldicion");
             Add("es", "node_type_injuredcompanion", "companero herido");
             Add("es", "node_type_journalpage", "pagina del diario");
-            Add("es", "node_type_charmshop", "tienda de amuletos");
+            Add("es", "node_type_charmshop", "tienda de talismanes");
             Add("es", "node_type_clunkshop", "tienda de trastos");
             Add("es", "node_type_muncher", "muncher");
             Add("es", "node_type_event", "evento");
@@ -247,8 +247,8 @@ namespace WildfrostAccessibility
             Add("es", "battle_crown_deploy_one", "Una carta coronada en tu mano se despliega antes de la batalla: pulsa Enter sobre ella para colocarla ahora.");
             Add("es", "battle_crown_deploy", "{0} cartas coronadas en tu mano se despliegan antes de la batalla: colocalas ahora.");
             Add("es", "card_crowned", "Coronada, se despliega al inicio de la batalla.");
-            Add("es", "card_charm_one", "Amuleto: {0}.");
-            Add("es", "card_charms", "{0} amuletos: {1}.");
+            Add("es", "card_charm_one", "Talisman: {0}.");
+            Add("es", "card_charms", "{0} talismanes: {1}.");
             Add("es", "card_token_one", "Ficha: {0}.");
             Add("es", "card_tokens", "{0} fichas: {1}.");
             Add("es", "counter_frozen", "contador congelado por la nieve");
@@ -311,7 +311,7 @@ namespace WildfrostAccessibility
             Add("es", "card_injured_one", "Herido.");
             Add("es", "card_injured", "Herido x{0}.");
             Add("es", "card_mentions", "Menciona a {0}");
-            Add("es", "upgrade_charm", "amuleto");
+            Add("es", "upgrade_charm", "talisman");
             Add("es", "upgrade_crown", "corona");
             Add("es", "upgrade_token", "ficha");
             // Back on the battle screen: Last Stand, injuries, the crown
@@ -378,7 +378,7 @@ namespace WildfrostAccessibility
             Add("es", "charselect_back", "Volver");
             Add("es", "charselect_leader_pos", "Lider {0} de {1}: {2}");
             Add("es", "charselect_pet_pos", "Mascota {0} de {1}: {2}");
-            Add("es", "event_node_CampaignNodeCharmShop", "Tienda de amuletos");
+            Add("es", "event_node_CampaignNodeCharmShop", "Tienda de talismanes");
             Add("es", "event_node_CampaignNodeCopyItem", "Copiar un objeto");
             Add("es", "event_node_CampaignNodeCurseItems", "Objetos malditos");
             Add("es", "icebreaker_hint", "Las flechas mueven entre los eventos de mapa, Enter lee que hace uno, Escape sale, I repite el resumen.");
@@ -395,9 +395,12 @@ namespace WildfrostAccessibility
             Add("es", "shrine_row_incomplete", "Retos pendientes");
             Add("es", "shrine_summary", "{0} pendientes, {1} completados.");
             Add("es", "tribe_banner", "Estandarte de tribu");
+            Add("es", "tribe_name_Basic", "Moradores de la Nieve");
+            Add("es", "tribe_name_Magic", "Sombramantes");
+            Add("es", "tribe_name_Clunk", "Chatarreros");
             Add("es", "tribe_desc_Basic", "La tribu inicial y la mas apta para principiantes. Congelan a los enemigos con Escarcha y Nieve para que pierdan turnos, y aumentan su ataque con Bonus.");
-            Add("es", "tribe_desc_Clunk", "Inventores que luchan con Chatarrunos, unidades pesadas de desguace, y Chatarra. Abruman al enemigo a base de masa y maquinaria.");
-            Add("es", "tribe_desc_Magic", "Una tribu agresiva y de alto riesgo construida en torno a Sombra y Especia. Acumulan ataque temporal para golpear rapido y fuerte, pero sus unidades son fragiles.");
+            Add("es", "tribe_desc_Clunk", "Inventores que luchan con Chatarra, maquinas pesadas que aguantan los golpes, y objetos de Basura. Abruman al enemigo a base de masa y maquinaria.");
+            Add("es", "tribe_desc_Magic", "Una tribu agresiva y de alto riesgo construida en torno a Sombra y Picante. Acumulan ataque temporal para golpear rapido y fuerte, pero sus unidades son fragiles.");
             Add("es", "tribe_leaders", "Lideres: {0}.");
             Add("es", "tribe_leaders_random", "Los lideres se generan al azar: eliges entre tres despues de escoger esta tribu.");
             Add("es", "tribe_no_roster", "Esta tribu no tiene lideres ni mazo inicial listados.");

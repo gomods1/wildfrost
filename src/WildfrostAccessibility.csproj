@@ -13,7 +13,9 @@
 
   <!-- Game assembly references -->
   <PropertyGroup>
-    <GameManagedDir>C:\Program Files (x86)\Steam\steamapps\common\Wildfrost\Modded\Wildfrost_Data\Managed</GameManagedDir>
+    <GameManagedDir Condition="'$(GameManagedDir)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Wildfrost\Modded\Wildfrost_Data\Managed</GameManagedDir>
+    <!-- Steam library on another drive -->
+    <GameManagedDir Condition="!Exists('$(GameManagedDir)') And Exists('S:\steam\steamapps\common\Wildfrost\Modded\Wildfrost_Data\Managed')">S:\steam\steamapps\common\Wildfrost\Modded\Wildfrost_Data\Managed</GameManagedDir>
   </PropertyGroup>
 
   <ItemGroup>
@@ -58,6 +60,10 @@
     </Reference>
     <Reference Include="UnityEngine.UIModule">
       <HintPath>$(GameManagedDir)\UnityEngine.UIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(GameManagedDir)\UnityEngine.TextRenderingModule.dll</HintPath>
       <Private>false</Private>
     </Reference>
     <Reference Include="Unity.TextMeshPro">

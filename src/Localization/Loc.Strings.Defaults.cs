@@ -249,6 +249,7 @@ namespace WildfrostAccessibility
             RegisterHandlerStrings();
             RegisterOverlayAndNarrationStrings();
             RegisterSettingsStrings();
+            RegisterButtonStrings();
         }
 
     }

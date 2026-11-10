@@ -161,7 +161,7 @@ Press **F2** anywhere to open the mod's own settings. There is no visual menu - 
 
 While the settings are open the game underneath is frozen, so an arrow key cannot move a menu you cannot see and Enter cannot start a run by accident.
 
-- **Language** - what the mod speaks. Automatic, or any of the languages below.
+- **Language** - what the mod speaks. Automatic (the game's language), or any of the languages below.
 - **Detail level** - short focus reads with the details waiting in the buffers, or full descriptions on focus. Same setting as the V key.
 - **Key repeat speed** - how fast a held arrow key repeats: slow, normal, or fast.
 - **Debug logging** - writes what the mod does (and every line it speaks) to the game log. Same setting as F10.
@@ -170,16 +170,21 @@ While the settings are open the game underneath is frozen, so an arrow key canno
 
 - Core announcements and the settings menu: English, German, French, Spanish, Italian, Portuguese, Russian, Polish, Turkish, Japanese, Korean, Simplified Chinese, Traditional Chinese.
 - Screen-specific announcements (Town, map, battle, continue screen): English, German, Spanish, French for now.
+- The game's own text: the game's English, Japanese, Korean and Chinese, plus Spanish from this mod.
 
 Anything not yet translated falls back to English, and the settings menu says so when you pick a partly translated language.
 
+### Playing in Spanish
+
+The mod includes a full Spanish translation of the game itself - cards, charms, menus, tutorials, the journal - so you do not need any separate translation mod. With the mod enabled, **Español** appears in the game's own language setting next to English, Japanese, Korean and Chinese. Pick it there and both the game and the mod switch to Spanish. On Spanish Windows the game starts in Spanish by itself the first time.
+
+The game's Spanish text is "Lozalizacion al Español" by Bombixfm and Naufrago, from the Steam Workshop, bundled here with credit. The Spanish text is drawn in the Caudex font (SIL Open Font License).
+
 ### How the language is chosen
 
-The game itself only offers English, Japanese, Korean, and Chinese, so the mod's German, Spanish, French, and the rest cannot be reached through the game's own language setting - pick them in the settings menu (F2) instead.
+Left on **Automatic**, the mod speaks the language picked in the game's own settings. The game has no German, French, Italian, Portuguese, Russian, Polish or Turkish text, so if your Windows is in one of those, the game stays in English and the mod speaks your Windows language instead.
 
-Left on **Automatic**, the mod speaks your Windows language if it knows it, otherwise the game's language, otherwise English. The mod talks through your screen reader, so matching the system is usually right: on Spanish Windows the mod speaks Spanish out of the box, whatever language the game is in.
-
-This only changes what the mod speaks. The game's own card names and story text keep following the game's language setting, so on a language the game does not have, card text stays English.
+To make the mod speak a different language from the game, pick it in the settings menu (F2). That only changes what the mod speaks; the game's own text keeps following the game's language setting.
 
 Your choice is written to `language.txt` next to `WildfrostAccessibility.dll`, and you can edit that file by hand if you prefer. It holds one language code and nothing else - `auto`, or one of `en` English, `de` German, `es` Spanish, `fr` French, `it` Italian, `pt` Portuguese, `ru` Russian, `pl` Polish, `tr` Turkish, `ja` Japanese, `ko` Korean, `zh-Hans` Simplified Chinese, `zh-Hant` Traditional Chinese. Capitalization does not matter, and edits by hand take effect on the next start.
 
