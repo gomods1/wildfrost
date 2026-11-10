@@ -42,6 +42,7 @@ namespace WildfrostAccessibility
             Register("CardFramesUnlocked", new CardFramesUnlockedHandler());
             Register("NewFrostGuardian", new FrostoscopeHandler());
             Register("JournalNameHistory", new JournalNameHandler());
+            Register("Mods", new ModsHandler());
 
             // Both credits scenes share one handler; it tells them apart itself
             var creditsHandler = new CreditsHandler();

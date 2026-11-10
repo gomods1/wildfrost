@@ -138,7 +138,7 @@ namespace WildfrostAccessibility
 
             DebugLogger.Initialize(this);
             Loc.Initialize();
-            Loc.LoadLanguageOverride(ModDirectory);
+            Loc.LoadLanguageOverride();
             GameTranslations.Initialize(ModDirectory);
             ScreenManager.Initialize();
             VisualNarrator.Initialize();

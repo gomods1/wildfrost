@@ -148,65 +148,65 @@ namespace WildfrostAccessibility
             Add("de", "companion_limit_row_reserve", "Reserve-Reihe");
 
             // ----- Spanish -----------------------------------------------------
-            Add("es", "scene_CardFramesUnlocked", "Marcos de carta desbloqueados!");
-            Add("es", "scene_NewFrostGuardian", "El Frostoscopio revela al proximo jefe final que espera a tu tribu.");
-            Add("es", "scene_JournalNameHistory", "El diario de lideres.");
+            Add("es", "scene_CardFramesUnlocked", "¡Marcos de carta desbloqueados!");
+            Add("es", "scene_NewFrostGuardian", "El Frostoscopio revela al próximo jefe final que espera a tu tribu.");
+            Add("es", "scene_JournalNameHistory", "El diario de líderes.");
             Add("es", "scene_DemoEnd", "Fin de la demo.");
             Add("es", "overlay_continue_hint", "Pulsa Intro para continuar.");
-            Add("es", "help_overlay_continue", "Una breve pantalla de celebracion. Intro o Escape continua.");
+            Add("es", "help_overlay_continue", "Una breve pantalla de celebración. Intro o Escape continúa.");
 
-            Add("es", "creditsend_announce", "La Escarcha ha sido vencida! Ruedan los creditos finales.");
+            Add("es", "creditsend_announce", "¡La Escarcha ha sido vencida! Ruedan los créditos finales.");
             Add("es", "credits_skip_hint", "Pulsa Intro o Escape para saltarlos.");
-            Add("es", "credits_skipped", "Creditos saltados.");
+            Add("es", "credits_skipped", "Créditos saltados.");
 
             Add("es", "townunlock_gained", "Desbloqueado: {0}.");
             Add("es", "frostoscope_nothing", "El visor no muestra nada ahora mismo.");
-            Add("es", "frostoscope_roster", "A traves de la lente helada ves: {0}.");
+            Add("es", "frostoscope_roster", "A través de la lente helada ves: {0}.");
 
-            Add("es", "journal_name_add", "El diario se abre y el nombre de tu lider queda escrito en la historia de lideres.");
-            Add("es", "journal_name_add_named", "El diario se abre y el nombre de {0} queda escrito en la historia de lideres.");
-            Add("es", "journal_name_void", "El diario se abre y el nombre del lider caido queda tachado.");
+            Add("es", "journal_name_add", "El diario se abre y el nombre de tu líder queda escrito en la historia de líderes.");
+            Add("es", "journal_name_add_named", "El diario se abre y el nombre de {0} queda escrito en la historia de líderes.");
+            Add("es", "journal_name_void", "El diario se abre y el nombre del líder caído queda tachado.");
 
             Add("es", "bossreward_open_hint", "Pulsa Intro para abrirlo.");
-            Add("es", "bossreward_choose_hint", "Las recompensas estan a la vista. Las flechas leen cada una, Intro la toma.");
-            Add("es", "bossreward_not_ready", "Todavia se esta abriendo, un momento.");
+            Add("es", "bossreward_choose_hint", "Las recompensas están a la vista. Las flechas leen cada una, Intro la toma.");
+            Add("es", "bossreward_not_ready", "Todavía se está abriendo, un momento.");
             Add("es", "bossreward_opening", "Se abre con un crujido...");
-            Add("es", "bossreward_option", "Opcion {0} de {1}: {2}");
+            Add("es", "bossreward_option", "Opción {0} de {1}: {2}");
             Add("es", "bossreward_taken", "Tomada: {0}.");
             Add("es", "bossreward_take_failed", "No se pudo tomar esta recompensa. Prueba las flechas e Intro de nuevo.");
             Add("es", "bossreward_pick_first", "Elige primero una recompensa con las flechas.");
-            Add("es", "help_bossreward", "Recompensa de jefe. Un premio sellado se abre en una eleccion de bendiciones. Intro lo abre, las flechas recorren las recompensas, Intro toma una.");
+            Add("es", "help_bossreward", "Recompensa de jefe. Un premio sellado se abre en una elección de bendiciones. Intro lo abre, las flechas recorren las recompensas, Intro toma una.");
 
             Add("es", "event_card_picked_up", "{0} en la mano.");
             Add("es", "event_card_released", "{0} entregada.");
             Add("es", "event_pickup_hint", "Las flechas eligen un objetivo, Intro le entrega la carta, Escape la devuelve.");
 
             Add("es", "campaignend_press_again", "Pulsa Intro otra vez para activar, o las flechas para otros botones.");
-            Add("es", "help_generic_screen", "Esta pantalla aun no tiene soporte dedicado. Las flechas mueven entre elementos, Intro activa, I inspecciona la carta enfocada, P abre el inventario.");
+            Add("es", "help_generic_screen", "Esta pantalla aún no tiene soporte dedicado. Las flechas mueven entre elementos, Intro activa, I inspecciona la carta enfocada, P abre el inventario.");
 
             Add("es", "speech_bubble", "{0} dice: {1}");
-            Add("es", "narrate_miniboss", "Un enemigo poderoso se estrella en el campo de batalla: {0}!");
-            Add("es", "narrate_wave", "Suena la campana de oleada! Nuevos enemigos cargan al campo de batalla.");
+            Add("es", "narrate_miniboss", "Un enemigo poderoso se estrella en el campo de batalla: ¡{0}!");
+            Add("es", "narrate_wave", "¡Suena la campana de oleada! Nuevos enemigos cargan al campo de batalla.");
             Add("es", "narrate_wave_enter", "{0} entra en {1}.");
-            Add("es", "narrate_wave_no_room", "{0} mas no cabian y esperan a la siguiente oleada.");
+            Add("es", "narrate_wave_no_room", "{0} más no cabían y esperan a la siguiente oleada.");
             Add("es", "narrate_gold_gained", "Has ganado {0} de oro.");
             Add("es", "recover_one", "{0} se ha recuperado y puede volver a luchar.");
             Add("es", "recover_many", "Recuperados y listos para luchar: {0}.");
-            Add("es", "injured_event", "Un companero herido de un viaje anterior: {0}. Si te lo llevas, se une herido a tu grupo y tendra que recuperarse antes de poder luchar.");
-            Add("es", "injured_event_unnamed", "Un companero herido de un viaje anterior. Si te lo llevas, se une herido a tu grupo y tendra que recuperarse antes de poder luchar.");
-            Add("es", "narrate_boss_transform", "{0} explota y se transforma! La batalla entra en una nueva fase.");
-            Add("es", "narrate_shade_flee", "Una voluta oscura surge del guardian caido y huye hacia la tormenta.");
-            Add("es", "narrate_shade_possess", "Una voluta oscura surge del guardian caido y se lanza hacia tu lider!");
-            Add("es", "narrate_shade_blocked", "{0} bloquea la voluta oscura! La Escarcha queda sellada.");
+            Add("es", "injured_event", "Un compañero herido de un viaje anterior: {0}. Si te lo llevas, se une herido a tu grupo y tendrá que recuperarse antes de poder luchar.");
+            Add("es", "injured_event_unnamed", "Un compañero herido de un viaje anterior. Si te lo llevas, se une herido a tu grupo y tendrá que recuperarse antes de poder luchar.");
+            Add("es", "narrate_boss_transform", "¡{0} explota y se transforma! La batalla entra en una nueva fase.");
+            Add("es", "narrate_shade_flee", "Una voluta oscura surge del guardián caído y huye hacia la tormenta.");
+            Add("es", "narrate_shade_possess", "¡Una voluta oscura surge del guardián caído y se lanza hacia tu líder!");
+            Add("es", "narrate_shade_blocked", "¡{0} bloquea la voluta oscura! La Escarcha queda sellada.");
             Add("es", "narrate_frost_eyes", "Los ojos de {0} brillan con escarcha. La Escarcha ha tomado el control.");
-            Add("es", "narrate_combine", "Tus cartas giran juntas y se combinan en algo nuevo!");
+            Add("es", "narrate_combine", "¡Tus cartas giran juntas y se combinan en algo nuevo!");
 
-            Add("es", "companion_limit_open", "Demasiados companeros! Tienes {0}, pero solo {1} pueden estar activos. Las flechas se mueven entre los companeros, Intro mueve el enfocado entre la fila activa y la reserva; los de reserva no combaten. Pulsa Continuar cuando termines.");
+            Add("es", "companion_limit_open", "¡Demasiados compañeros! Tienes {0}, pero solo {1} pueden estar activos. Las flechas se mueven entre los compañeros, Intro mueve el enfocado entre la fila activa y la reserva; los de reserva no combaten. Pulsa Continuar cuando termines.");
             Add("es", "companion_limit_active_list", "Activos: {0}.");
             Add("es", "companion_limit_reserve_list", "En reserva: {0}.");
             Add("es", "companion_limit_moved_active", "{0} movido a la fila activa. {1} de {2} activos.");
             Add("es", "companion_limit_moved_reserve", "{0} movido a la reserva. {1} de {2} activos.");
-            Add("es", "companion_limit_over", "Por encima del limite; mueve un companero a la reserva para continuar.");
+            Add("es", "companion_limit_over", "Por encima del límite; mueve un compañero a la reserva para continuar.");
             Add("es", "companion_limit_can_continue", "Ya puedes continuar.");
             Add("es", "companion_limit_row_active", "fila activa");
             Add("es", "companion_limit_row_reserve", "fila de reserva");

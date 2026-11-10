@@ -8,9 +8,8 @@ namespace WildfrostAccessibility
     /// how to say its own name and value and how to step to the next value;
     /// the menu in SettingsMenu.cs only moves between them.
     ///
-    /// Settings are stored where they are cheapest to reach at the moment they
-    /// are needed: the language in language.txt next to the DLL (see Loc), the
-    /// rest in the game's own save data alongside the other progress keys.
+    /// Settings are stored in the game's own save data alongside the other
+    /// progress keys (the language through Loc.SetLanguage).
     /// </summary>
     public static partial class SettingsMenu
     {

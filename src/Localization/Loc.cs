@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
@@ -13,7 +12,7 @@ namespace WildfrostAccessibility
     /// table, the reads against it (Get, TryGet) and the writes into it (Add,
     /// AddForAll). Also owns which language the mod speaks — by default the
     /// language chosen in the game's own settings, or an explicit override made
-    /// in the mod's settings menu (F2), persisted to language.txt, which lets
+    /// in the mod's settings menu (F2), kept in the game's save data, which lets
     /// the mod speak a language the game itself does not offer. The string
     /// data lives in the Loc.Strings.* parts.
     /// </summary>
@@ -23,7 +22,7 @@ namespace WildfrostAccessibility
         private static readonly Dictionary<string, Dictionary<string, string>> _strings
             = new Dictionary<string, Dictionary<string, string>>();
 
-        /// <summary>Marker stored in language.txt for "follow the system".</summary>
+        /// <summary>Marker stored in the save data for "follow the system".</summary>
         public const string Automatic = "auto";
 
         /// <summary>
@@ -62,13 +61,9 @@ namespace WildfrostAccessibility
                 { "zh-Hant", "繁體中文" },
             };
 
-        // The explicit choice from the settings menu / language.txt, or null
-        // while the mod follows the automatic chain.
+        // The explicit choice from the settings menu, or null while the mod
+        // follows the automatic chain.
         private static string _overrideLang;
-
-        // Where language.txt lives; captured at load so the settings menu can
-        // write the choice back without threading the path through the UI.
-        private static string _modDirectory;
 
         /// <summary>
         /// Initialize and register all screen reader strings.
@@ -163,19 +158,18 @@ namespace WildfrostAccessibility
         // ---- Language selection ------------------------------------------------
 
         /// <summary>
-        /// Restore the language chosen in the settings menu. The choice lives in
-        /// [modDirectory]/language.txt — a single language code such as "es", or
-        /// "auto" to follow the system. The file doubles as a hand-editable
-        /// setting for players who prefer that; a save-data copy is used only as
-        /// a fallback for installs where the mod folder is read-only.
+        /// Restore the language chosen in the settings menu, kept in the game's
+        /// save data as a single language code such as "es", or "auto" to
+        /// follow the game. Older versions kept it in a language.txt file in
+        /// the mod folder; that file is no longer read, so a forgotten
+        /// hand-written override cannot pin the speech language.
         /// Must run after Initialize().
         /// </summary>
-        public static void LoadLanguageOverride(string modDirectory)
+        public static void LoadLanguageOverride()
         {
-            _modDirectory = modDirectory;
             _overrideLang = null;
 
-            string stored = ReadLanguageFile(modDirectory) ?? ReadLanguageSaveData();
+            string stored = ReadLanguageSaveData();
             if (string.IsNullOrEmpty(stored))
                 return;
 
@@ -187,7 +181,7 @@ namespace WildfrostAccessibility
                 _overrideLang = resolved;
             else
                 DebugLogger.Log(DebugLogger.LogCategory.ScreenReader,
-                    $"language.txt has unknown code '{stored}'; following the system language");
+                    $"Saved language has unknown code '{stored}'; following the system language");
         }
 
         /// <summary>
@@ -200,11 +194,7 @@ namespace WildfrostAccessibility
         {
             _overrideLang = IsAutomatic(langCode) ? null : NormalizeLanguage(langCode);
 
-            string stored = _overrideLang ?? Automatic;
-            bool persisted = WriteLanguageFile(stored);
-            if (!persisted)
-                persisted = WriteLanguageSaveData(stored);
-            return persisted;
+            return WriteLanguageSaveData(_overrideLang ?? Automatic);
         }
 
         /// <summary>The explicit language choice, or null while following the system.</summary>
@@ -459,39 +449,6 @@ namespace WildfrostAccessibility
         }
 
         // ---- Persistence -------------------------------------------------------
-
-        private static string ReadLanguageFile(string modDirectory)
-        {
-            try
-            {
-                string path = Path.Combine(modDirectory, "language.txt");
-                if (!File.Exists(path))
-                    return null;
-                string code = File.ReadAllText(path).Trim();
-                return code.Length == 0 ? null : code;
-            }
-            catch
-            {
-                return null; // Unreadable file — fall back to the save data
-            }
-        }
-
-        private static bool WriteLanguageFile(string stored)
-        {
-            if (string.IsNullOrEmpty(_modDirectory))
-                return false;
-            try
-            {
-                File.WriteAllText(Path.Combine(_modDirectory, "language.txt"), stored);
-                return true;
-            }
-            catch
-            {
-                // Read-only install (a game folder needing admin rights) —
-                // the caller falls back to the save file
-                return false;
-            }
-        }
 
         private static string ReadLanguageSaveData()
         {

@@ -73,8 +73,8 @@ namespace WildfrostAccessibility
             // Spanish
             Add("es", "mod_loaded", "Accesibilidad de Wildfrost cargada. F1 para ayuda.");
             Add("es", "mod_unloaded", "Accesibilidad de Wildfrost descargada.");
-            Add("es", "help_text", "Accesibilidad de Wildfrost. F1: esta ayuda. F10: alternar modo de depuracion. Flechas: navegar. Enter: seleccionar. Ctrl mas flechas: buferes de revision. V: descripciones cortas o completas.");
-            Add("es", "screen_main_menu", "Menu principal. Flechas arriba y abajo para navegar, Enter para seleccionar.");
+            Add("es", "help_text", "Accesibilidad de Wildfrost. F1: esta ayuda. F10: alternar modo de depuración. Flechas: navegar. Enter: seleccionar. Ctrl más flechas: búferes de revisión. V: descripciones cortas o completas.");
+            Add("es", "screen_main_menu", "Menú principal. Flechas arriba y abajo para navegar, Enter para seleccionar.");
             Add("es", "tutorial_prompt", "Tutorial: {0}");
             Add("es", "slot_your_side", "Tu lado");
             Add("es", "slot_enemy_side", "Lado enemigo");
@@ -82,11 +82,11 @@ namespace WildfrostAccessibility
             Add("es", "slot_your_row", "Tu fila {0}");
             Add("es", "slot_enemy_row", "Fila enemiga {0}");
             Add("es", "slot_position", "Casilla {0}");
-            Add("es", "slot_empty", "Vacio");
+            Add("es", "slot_empty", "Vacío");
             Add("es", "slot_occupied", "Ocupado");
             Add("es", "slot_opposite", "frente a {0}");
-            Add("es", "slot_opposite_empty", "frente a una casilla vacia");
-            Add("es", "building_under_construction", "En construccion");
+            Add("es", "slot_opposite_empty", "frente a una casilla vacía");
+            Add("es", "building_under_construction", "En construcción");
             Add("es", "building_new_unlock", "Nuevo desbloqueo disponible");
 
             // Japanese
@@ -250,6 +250,7 @@ namespace WildfrostAccessibility
             RegisterOverlayAndNarrationStrings();
             RegisterSettingsStrings();
             RegisterButtonStrings();
+            RegisterModsStrings();
         }
 
     }

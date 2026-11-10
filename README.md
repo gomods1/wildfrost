@@ -186,7 +186,7 @@ Left on **Automatic**, the mod speaks the language picked in the game's own sett
 
 To make the mod speak a different language from the game, pick it in the settings menu (F2). That only changes what the mod speaks; the game's own text keeps following the game's language setting.
 
-Your choice is written to `language.txt` next to `WildfrostAccessibility.dll`, and you can edit that file by hand if you prefer. It holds one language code and nothing else - `auto`, or one of `en` English, `de` German, `es` Spanish, `fr` French, `it` Italian, `pt` Portuguese, `ru` Russian, `pl` Polish, `tr` Turkish, `ja` Japanese, `ko` Korean, `zh-Hans` Simplified Chinese, `zh-Hant` Traditional Chinese. Capitalization does not matter, and edits by hand take effect on the next start.
+Your choice is kept in the game's save data. Older versions of the mod kept it in a `language.txt` file in the mod folder; that file is no longer read, so you can delete it.
 
 ## Building from Source
 

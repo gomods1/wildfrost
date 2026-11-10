@@ -134,7 +134,7 @@ namespace WildfrostAccessibility
         }
 
         /// <summary>Hierarchy path of a transform, up to 6 ancestors deep.</summary>
-        private static string GetPath(Transform t)
+        internal static string GetPath(Transform t)
         {
             var parts = new List<string>();
             int depth = 0;

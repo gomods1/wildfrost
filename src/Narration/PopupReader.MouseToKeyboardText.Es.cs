@@ -57,7 +57,7 @@ namespace WildfrostAccessibility
             // "arrastrandolo a una carta" → "seleccionandolo y colocandolo en una carta"
             text = Regex.Replace(text,
                 @"\barrastr[aá]ndol(?<g>[oa]s?)\s+(?<to>al|a)\b",
-                m => "seleccionandol" + m.Groups["g"].Value + " y colocandol" + m.Groups["g"].Value
+                m => "seleccionándol" + m.Groups["g"].Value + " y colocándol" + m.Groups["g"].Value
                     + Destination(m.Groups["to"].Value),
                 Ci);
 
@@ -105,9 +105,9 @@ namespace WildfrostAccessibility
                     string result;
                     switch (m.Groups["form"].Value.ToLowerInvariant())
                     {
-                        case "ando": result = "seleccionando " + x + " y colocandolo" + dest; break;
+                        case "ando": result = "seleccionando " + x + " y colocándolo" + dest; break;
                         case "ar": result = "seleccionar " + x + " y colocarlo" + dest; break;
-                        default: result = "selecciona " + x + " y colocalo" + dest; break;
+                        default: result = "selecciona " + x + " y colócalo" + dest; break;
                     }
                     // "Arrastra" opening a sentence stays capitalised
                     return KeepCase(m.Value, result);

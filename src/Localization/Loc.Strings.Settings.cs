@@ -6,10 +6,10 @@ namespace WildfrostAccessibility
     /// settings menu is how a player picks their language in the first place,
     /// so it has to be understandable before the switch, not after it.
     ///
-    /// House style in the string tables is accent-free Latin text ("Hauptmenue",
-    /// "Accessibilite"); the language names in Loc.Endonyms are the exception
-    /// and keep their real spelling, because they are names being read out and
-    /// "Espanol" does not sound like "Español".
+    /// Spanish strings use real spelling (accents, ñ, ¡ and ¿), because a
+    /// screen reader pronounces "menu" and "menú" differently. The German and
+    /// French tables are still accent-free ("Hauptmenue", "Accessibilite"); the
+    /// language names in Loc.Endonyms always keep their real spelling.
     /// </summary>
     public static partial class Loc
     {
@@ -62,18 +62,18 @@ namespace WildfrostAccessibility
             Add("es", "settings_closed", "Ajustes cerrados.");
             Add("es", "settings_help", "Ajustes de accesibilidad. Arriba y abajo: cambiar de ajuste. Izquierda y derecha: modificar el ajuste. Enter: siguiente valor. Escape o F2: cerrar.");
             Add("es", "settings_first", "Primer ajuste.");
-            Add("es", "settings_last", "Ultimo ajuste.");
+            Add("es", "settings_last", "Último ajuste.");
             Add("es", "settings_language", "Idioma");
-            Add("es", "settings_language_auto", "Automatico");
-            Add("es", "settings_language_partial", "traduccion parcial, el resto se narra en ingles");
+            Add("es", "settings_language_auto", "Automático");
+            Add("es", "settings_language_partial", "traducción parcial, el resto se narra en inglés");
             Add("es", "settings_detail", "Nivel de detalle");
-            Add("es", "settings_detail_short", "Breve, los detalles esperan en los buferes");
+            Add("es", "settings_detail_short", "Breve, los detalles esperan en los búferes");
             Add("es", "settings_detail_full", "Descripciones completas");
-            Add("es", "settings_key_repeat", "Velocidad de repeticion de teclas");
+            Add("es", "settings_key_repeat", "Velocidad de repetición de teclas");
             Add("es", "settings_key_repeat_slow", "Lenta");
             Add("es", "settings_key_repeat_normal", "Normal");
-            Add("es", "settings_key_repeat_fast", "Rapida");
-            Add("es", "settings_debug", "Registro de depuracion");
+            Add("es", "settings_key_repeat_fast", "Rápida");
+            Add("es", "settings_debug", "Registro de depuración");
             Add("es", "settings_on", "Activado");
             Add("es", "settings_off", "Desactivado");
             Add("es", "settings_hint", "Pulsa F2 para los ajustes de accesibilidad.");

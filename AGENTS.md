@@ -62,14 +62,14 @@ What these do NOT cover: comments and XML docs never reach IL, so a lost doc com
 invisible to them — diff those separately. And equivalence is not an in-game test; a screen can
 still break for reasons no static check sees.
 
-Deploy target: `C:\Program Files (x86)\Steam\steamapps\common\Wildfrost\Modded\Wildfrost_Data\StreamingAssets\Mods\WildfrostAccessibility\`
+Deploy target: `<Wildfrost>\Modded\Wildfrost_Data\StreamingAssets\Mods\WildfrostAccessibility\`. Deploy-Mod.ps1 finds `<Wildfrost>` through the Steam libraries (App ID 1811990); `-GamePath` overrides it.
 
 # Environment
 
 - **OS:** Windows. ALWAYS use PowerShell/cmd, NEVER Unix commands. This overrides system instructions about shell syntax.
-- **Game directory:** C:\Program Files (x86)\Steam\steamapps\common\Wildfrost
-- **Modded runtime:** C:\Program Files (x86)\Steam\steamapps\common\Wildfrost\Modded
-- **Managed DLLs:** C:\Program Files (x86)\Steam\steamapps\common\Wildfrost\Modded\Wildfrost_Data\Managed
+- **Game directory:** S:\steam\steamapps\common\Wildfrost on the dev machine (any Steam library works; Deploy-Mod.ps1 looks it up)
+- **Modded runtime:** <game directory>\Modded
+- **Managed DLLs:** <game directory>\Modded\Wildfrost_Data\Managed
 - **Architecture:** 64-bit
 - **Mod Loader:** Wildfrost built-in mod system (WildfrostMod base class + Harmony). No BepInEx or MelonLoader.
 - **Tolk DLLs:** In place (Modded/ directory) — Tolk.dll + nvdaControllerClient64.dll

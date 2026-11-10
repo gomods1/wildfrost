@@ -66,7 +66,7 @@ namespace WildfrostAccessibility
             Add("es", "buffer_switched", "{0}, {1} elementos");
             Add("es", "buffer_switched_one", "{0}, 1 elemento");
             Add("es", "buffer_none", "Nada que revisar");
-            Add("es", "verbosity_short", "Descripciones cortas. Los detalles estan en los buferes de revision.");
+            Add("es", "verbosity_short", "Descripciones cortas. Los detalles están en los búferes de revisión.");
             Add("es", "verbosity_verbose", "Descripciones completas");
 
             // Japanese
@@ -199,7 +199,7 @@ namespace WildfrostAccessibility
             Add("en", "help_buffers", "Control plus up or down steps through a review buffer; control plus left or right switches buffers. V toggles short or full descriptions.");
             Add("de", "help_buffers", "Strg plus Hoch oder Runter blaettert durch einen Lesepuffer; Strg plus Links oder Rechts wechselt den Puffer. V schaltet zwischen kurzen und ausfuehrlichen Beschreibungen um.");
             Add("fr", "help_buffers", "Ctrl plus haut ou bas parcourt un tampon de lecture; Ctrl plus gauche ou droite change de tampon. V bascule entre descriptions courtes et completes.");
-            Add("es", "help_buffers", "Ctrl mas arriba o abajo recorre un bufer de revision; Ctrl mas izquierda o derecha cambia de bufer. V alterna descripciones cortas o completas.");
+            Add("es", "help_buffers", "Ctrl más arriba o abajo recorre un búfer de revisión; Ctrl más izquierda o derecha cambia de búfer. V alterna descripciones cortas o completas.");
             Add("ja", "help_buffers", "Ctrl+上下でレビューバッファ内を移動、Ctrl+左右でバッファ切替。Vで説明の長さを切替。");
             Add("ko", "help_buffers", "Ctrl+위아래로 검토 버퍼 이동, Ctrl+좌우로 버퍼 전환. V로 설명 길이 전환.");
             Add("zh-Hans", "help_buffers", "Ctrl加上下键在查看缓冲区中移动，Ctrl加左右键切换缓冲区。V键切换描述长短。");
